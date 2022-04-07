@@ -1,0 +1,58 @@
+{% extends "base.html" %} 
+
+{% load static %}
+
+{% block style %}
+<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12 mt-4">
+        <h1 class="text-center mb-5">Avis</h1>
+
+        {% if rating_list %}
+            {% for rating in rating_list %}
+            <div class="row">
+                <div class="col-md-10 mb-4">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            {% for r in range %}
+                                {% if r <= rating.rating %}
+                                    <i class="fa-solid fa-star" style="color: #f8ce0b"></i>
+                                {% else %}
+                                    <i class="fa-solid fa-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ rating.body }}</p>
+                            {% if rating.response %}
+                            <hr />
+                            <p class="card-text font-italic">Réponse le {{ rating.response.date }}</p>
+                            <p class="card-text font-italic">{{ rating.response.body }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer text-muted">
+                            <b>{{ rating.username }}</b> le {{ rating.date }}
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.first %}
+                <div class="col-md-2 text-right">
+                    <a href="{% url 'rating_add' %}" class="btn btn-primary">Ajouter un avis</a>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="row col-lg-12">Aucun avis pour le moment.</div>
+        {% endif %}
+    </div>
+
+    {% include "photologue/includes/paginator.html" %}
+{%endblock%}
+
+{% block scripts %}
+<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+{% endblock %}

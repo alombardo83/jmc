@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block style %}
+<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'rating/css/rating.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12 mb-6 mt-4">
+        <h1 class="text-center">Avis</h1>
+		<h2 class="text-center">Laissez-nous un avis.</h2>
+		<p class="text-center">Merci de nous laisser un avis nous permettant de nous améliorer.</p>
+
+        <form method="post" style="margin-top: 1.3em;">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-lg">Valider</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+{% endblock %}

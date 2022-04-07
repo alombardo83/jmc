@@ -1,0 +1,78 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  background-color: #17b82066;
+}
+.shadow {
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+}
+.masthead {
+  background: #888;
+  height: auto;
+  padding-bottom: 15px;
+  box-shadow: 0 16px 48px #E3E7EB;
+  padding-top: 10px;
+}
+img {
+  width: 100%;
+}
+.custom-mr {
+  margin-left: -46px;
+}
+.logo {
+  width: 60px;
+}
+.banner {
+  width: 400px;
+}
+.navbar {
+  background-color: #4a932f;
+}
+.nav-link {
+  color: white;
+}
+.nav-link:hover {
+  color: #b3b3b3;
+}
+.card {
+  background-color: #8cd196;
+}
+.page-item.disabled .page-link {
+  background-color: #4a932f;
+  color: #b3b3b3;
+}
+.page-link {
+  background-color: #4a932f;
+  color: white;
+}
+.btn-primary {
+  background-color: #4a932f;
+  border-color: #4a932f;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #3a7225;
+  border-color: #3a7225;
+  color: white;
+}
+.jumbotron {
+  background-color: #81bf65;
+}
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+/* Workaround a bug in crispy-forms not showing validation error from simple-captcha */
+.invalid-feedback {
+  display: block;
+}
+.captcha {
+  width: 20%;
+}
+#id_captcha_1.form-control {
+  width: 70%;
+  display: inline;
+  float: right;
+}

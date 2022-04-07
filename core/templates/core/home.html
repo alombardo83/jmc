@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}
+<meta property="og:url" content="https://lesdragonsdupradet.fr/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Les Dragons du Pradet" />
+<meta property="og:description" content="Les Dragons du Pradet, club de supporters du RCT" />
+{% endblock meta %}
+
+{% block content %}
+<div class="col-md-12">
+    <div class="jumbotron">
+        <h1 class="display-4 text-center"><span class="font-weight-bold">J</span>ardin <span class="font-weight-bold">M</span>açonnerie <span class="font-weight-bold">C</span>arrelage</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-4 text-center">
+            <h1>Personne sérieuse et d’expérience dans les espaces verts, la maçonnerie, le carrelage et le bricolage.</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mt-4 text-center">
+            <img class="img-fluid banner" src="{% static 'core/img/banner.png' %}" />
+        </div>
+    </div>
+
+</div>
+{%endblock%}
