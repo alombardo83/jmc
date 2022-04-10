@@ -11,9 +11,16 @@
         <h1 class="text-center mb-5">Avis</h1>
 
         {% if rating_list %}
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-4 mb-4 text-right">
+                    <a href="{% url 'rating_add' %}" class="btn btn-primary">Ajouter un avis</a>
+                </div>
+            </div>
+
             {% for rating in rating_list %}
             <div class="row">
-                <div class="col-md-10 mb-4">
+                <div class="col-md-12 mb-4">
                     <div class="card mb-4">
                         <div class="card-header">
                             {% for r in range %}
@@ -37,12 +44,6 @@
                         </div>
                     </div>
                 </div>
-
-                {% if forloop.first %}
-                <div class="col-md-2 text-right">
-                    <a href="{% url 'rating_add' %}" class="btn btn-primary">Ajouter un avis</a>
-                </div>
-                {% endif %}
             </div>
             {% endfor %}
         {% else %}
